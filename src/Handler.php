@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace Ezyt\Yii2Atatus;
 
 use Ezyt\Atatus\Service;
-use Yii;
 use yii\base\ActionEvent;
 
 abstract class Handler
@@ -20,11 +19,7 @@ abstract class Handler
         $this->ignoreList = $ignoreList;
     }
 
-    public function handleBeforeRequest()
-    {
-        $this->atatus->setTransactionName(Yii::$app->request->url);
-        $this->atatus->addCustomData('method', Yii::$app->request->method);
-    }
+    abstract public function handleBeforeRequest();
 
     public function handleBeforeAction(ActionEvent $event)
     {
