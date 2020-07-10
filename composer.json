@@ -14,7 +14,7 @@
             "email": "ezyt.job@gmail.com"
         }
     ],
-    "minimum-stability": "dev",
+    "minimum-stability": "stable",
     "autoload":{
         "psr-4":{
             "Ezyt\\Yii2Atatus\\": "src"
