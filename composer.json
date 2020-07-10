@@ -1,0 +1,23 @@
+{
+    "name": "ezit/yii2-atatus-component",
+    "type": "library",
+    "description": "Yii2 component for wokt with Atatus",
+    "require": {
+        "php": "^7.0",
+        "yiisoft/yii2": "2.0.*@stable",
+        "ezyt/atatus": "^1.0|^2.0"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Denis Putilin",
+            "email": "ezyt.job@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "autoload":{
+        "psr-4":{
+            "Ezyt\\Yii2Atatus\\": "src"
+        }
+    }
+}
