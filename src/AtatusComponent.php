@@ -48,27 +48,35 @@ class AtatusComponent extends Component implements BootstrapInterface
 
     protected function initConsoleHandler(Application $app)
     {
-        $handler = new Handler($this->atatus, array_merge($this->ignoreList, $this->cliIgnoreList));
+        $handler = new ConsoleHandler($this->atatus, array_merge($this->ignoreList, $this->cliIgnoreList));
         $app->on(
             $app::EVENT_BEFORE_REQUEST,
-            [$handler, 'handleBefore']
+            [$handler, 'handleBeforeRequest']
+        );
+        $app->on(
+            $app::EVENT_BEFORE_ACTION,
+            [$handler, 'handleBeforeAction']
         );
         $app->on(
             $app::EVENT_AFTER_REQUEST,
-            [$handler, 'handleAfter']
+            [$handler, 'handleAfterRequest']
         );
     }
 
     protected function initWebHandler(Application $app)
     {
-        $handler = new Handler($this->atatus, array_merge($this->ignoreList, $this->webIgnoreList));
+        $handler = new WebHandler($this->atatus, array_merge($this->ignoreList, $this->webIgnoreList));
         $app->on(
             $app::EVENT_BEFORE_REQUEST,
-            [$handler, 'handleBefore']
+            [$handler, 'handleBeforeRequest']
+        );
+        $app->on(
+            $app::EVENT_BEFORE_ACTION,
+            [$handler, 'handleBeforeAction']
         );
         $app->on(
             $app::EVENT_AFTER_REQUEST,
-            [$handler, 'handleAfter']
+            [$handler, 'handleAfterRequest']
         );
     }
 

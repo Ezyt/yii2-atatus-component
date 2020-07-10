@@ -26,7 +26,9 @@ Config
         'atatus'        
     ],
     'components' => [
-        'class'   => \Ezyt\Yii2Atatus\AtatusComponent::class,
+        'atatus' => [
+            'class'   => \Ezyt\Yii2Atatus\AtatusComponent::class,
+        ],
     ],
 ];
 ```
