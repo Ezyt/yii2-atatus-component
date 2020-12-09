@@ -3,7 +3,7 @@
     "type": "library",
     "description": "Yii2 component for wokt with Atatus",
     "require": {
-        "php": "^7.0",
+        "php": "^7.0|^8.0",
         "yiisoft/yii2": "2.0.*@stable",
         "ezyt/atatus": "^1.0|^2.0"
     },
